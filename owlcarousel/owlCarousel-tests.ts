@@ -1,5 +1,5 @@
 /// <reference path="../jquery/jquery.d.ts"/>
-/// <reference path="owlCarousel.d.ts" />
+/// <reference path="owlcarousel.d.ts" />
 
 $(".className").owlCarousel();
 
