@@ -3527,6 +3527,8 @@ declare module uiGrid {
         filter?: IFilterOptions;
         /** Filters for this column. Includes 'term' property bound to filter input elements */
         filters?: Array<IFilterOptions>;
+        /** Reference to grid containing the column */
+        grid: IGridInstanceOf<TEntity>;
         name?: string;
         /** Sort on this column */
         sort?: ISortInfo;
@@ -3780,7 +3782,7 @@ declare module uiGrid {
     }
 
     export interface ICellClassGetter<TEntity> {
-        (gridRow?: IGridRowOf<TEntity>, gridCol?: IGridColumnOf<TEntity>, colRenderIndex?: number): string;
+        (grid?: IGridInstanceOf<TEntity>, gridRow?: IGridRowOf<TEntity>, gridCol?: IGridColumnOf<TEntity>, rowRenderIndex?: number, colRenderIndex?: number): string;
     }
 
     export interface ICellTooltipGetter<TEntity> {
@@ -3790,7 +3792,7 @@ declare module uiGrid {
         (gridCol: IGridColumnOf<TEntity>): string;
     }
     export interface IHeaderFooterCellClassGetter<TEntity> {
-        (gridRow: IGridRowOf<TEntity>, rowRenderIndex: number, gridCol: IGridColumnOf<TEntity>, colRenderIndex: number)
+        (grid: IGridInstanceOf<TEntity>, gridRow: IGridRowOf<TEntity>, gridCol: IGridColumnOf<TEntity>, rowRenderIndex: number, colRenderIndex: number)
             : string;
     }
     export interface IMenuItem {
